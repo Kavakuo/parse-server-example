@@ -28,7 +28,7 @@ var api = new ParseServer({
 var app = express();
 
 // Serve static assets from the /public folder
-app.use('/public', express.static(path.join(__dirname, '/public')));
+// app.use('/public', express.static(path.join(__dirname, '/public')));
 
 // Serve the Parse API on the /parse URL prefix
 var mountPath = process.env.PARSE_MOUNT || '/parse';
@@ -41,9 +41,9 @@ app.get('/', function(req, res) {
 
 // There will be a test page available on the /test path of your server url
 // Remove this before launching your app
-app.get('/testing', function(req, res) {
-  res.sendFile(path.join(__dirname, '/public/test.html'));
-});
+// app.get('/testing', function(req, res) {
+//   res.sendFile(path.join(__dirname, '/public/test.html'));
+// });
 
 var port = process.env.PORT || 1337;
 var httpServer = require('http').createServer(app);
